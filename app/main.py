@@ -6,9 +6,8 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.core.db import Base, engine
-# from app.model import UserORM, AnalisisORM
+# from app.model import UserORM
 from app.model.user import UserORM
-from app.model.analisis import AnalisisORM
 from app.model.images import ImagesORM
 from app.api.v1.users.router import router as post_router
 from app.api.v1.auth.router import router as auth_router

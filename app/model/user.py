@@ -9,7 +9,6 @@ from app.core.db import Base
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from .analisis import AnalisisORM
     from .images import ImagesORM
 
 class RolEnum(str, enum.Enum):
@@ -31,5 +30,4 @@ class UserORM(Base):
         nullable=False
     )
     registration_date: Mapped[datetime] = mapped_column(DateTime, server_default=func.now())
-    analisis_relacionados: Mapped[List[AnalisisORM]] = relationship("AnalisisORM", back_populates="usuario",cascade="all, delete-orphan" )
     imagen_relacionados: Mapped[List["ImagesORM"]] = relationship("ImagesORM", back_populates="usuario", cascade="all, delete-orphan")

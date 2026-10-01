@@ -2,7 +2,7 @@ from sqlalchemy.orm import Session,selectinload,joinedload
 from sqlalchemy import  select,func,or_
 from typing import Optional,List,Tuple
 from math import ceil
-from app.model import UserORM,AnalisisORM
+from app.model import UserORM
 from app.api.v1.users.schemas import UserCreate
 from pydantic import EmailStr
 
